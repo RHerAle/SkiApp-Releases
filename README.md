@@ -223,10 +223,27 @@ SkiApp 3.0.0 introduce el nuevo sistema de diseño **Alpine Technical Precision*
 
 ## Guía de Instalación y Actualización OTA
 
-### Instalación Inicial
+### Instalación Inicial en Android
 1. **Descarga el APK:** Abre la [página de Latest Release](https://github.com/RHerAle/SkiApp-Releases/releases/latest) y pulsa en `SkiApp-v3.0.0.apk`.
 2. **Autoriza la instalación:** Si Android solicita permiso para instalar aplicaciones desconocidas, actívalo en los ajustes de seguridad.
 3. **Instala y Abre:** Completa la instalación y accede a todas las funciones sin conexión a internet.
+
+### Descarga e Instalación en iPhone / iOS (`SkiApp-iOS-v3.0.0.ipa`)
+El paquete nativo para iOS (`SkiApp-iOS-v3.0.0.ipa`) ofrece compatibilidad con iOS 16.0 o superior en iPhone. Puedes instalar el paquete mediante herramientas estándar de sideloading:
+
+1. **AltStore / SideStore:**
+   - Descarga `SkiApp-iOS-v3.0.0.ipa` desde [GitHub Releases](https://github.com/RHerAle/SkiApp-Releases/releases/tag/v3.0.0).
+   - En AltStore o SideStore, pulsa el botón `+` en la pestaña **My Apps** y selecciona el archivo `.ipa`.
+   - O bien, desde SkiApp en la pestaña **Perfil**, pulsa **Instalar con AltStore** o **SideStore** para iniciar la instalación de forma directa.
+2. **Sideloadly:**
+   - Conecta tu iPhone al ordenador por cable o red local Wi-Fi.
+   - Abre Sideloadly, arrastra `SkiApp-iOS-v3.0.0.ipa`, introduce tu Apple ID y pulsa **Start**.
+3. **TrollStore:**
+   - Si tu dispositivo dispone de TrollStore, abre el enlace directo del `.ipa` y pulsa **Install** para una instalación permanente sin caducidad de firma de 7 días.
+4. **Activación de Modo Desarrollador en iOS 16+:**
+   - Ve a **Ajustes > Privacidad y seguridad > Modo de desarrollador** y actívalo.
+   - En **Ajustes > General > Gestión de VPN y dispositivos**, confía en el certificado de tu Apple ID.
+
 
 ### Funcionamiento del Botón "Actualizar"
 * En la cabecera superior del planificador y en la pantalla de **Perfil**, dispones del botón técnico **Actualizar**.
@@ -336,10 +353,27 @@ SkiApp 3.0.0 introduces the **Alpine Technical Precision** design system and alg
 
 ## Installation & In-App Update Guide
 
-### Initial Installation
+### Initial Android Installation
 1. **Download APK:** Open the [Latest Release Page](https://github.com/RHerAle/SkiApp-Releases/releases/latest) and tap `SkiApp-v3.0.0.apk`.
 2. **Authorize Unknown Sources:** If prompted by Android, grant permission to install from your browser or file manager.
 3. **Launch & Ski:** Open SkiApp and select your favorite resort.
+
+### iPhone / iOS Installation Guide (`SkiApp-iOS-v3.0.0.ipa`)
+The native iOS package (`SkiApp-iOS-v3.0.0.ipa`) targets iOS 16.0 or later on iPhone. Install it via standard sideloading tools:
+
+1. **AltStore / SideStore:**
+   - Download `SkiApp-iOS-v3.0.0.ipa` from [GitHub Releases](https://github.com/RHerAle/SkiApp-Releases/releases/tag/v3.0.0).
+   - In AltStore or SideStore, tap `+` in **My Apps** and select the `.ipa` file.
+   - Or open the **Profile** tab in SkiApp and tap **AltStore** or **SideStore** for one-tap install.
+2. **Sideloadly:**
+   - Connect your iPhone to your PC or Mac via cable or local Wi-Fi.
+   - Open Sideloadly, drag and drop `SkiApp-iOS-v3.0.0.ipa`, enter your Apple ID, and click **Start**.
+3. **TrollStore:**
+   - On TrollStore-compatible devices, open the direct `.ipa` link and tap **Install** with zero 7-day resigning limits.
+4. **Developer Mode on iOS 16+:**
+   - Go to **Settings > Privacy & Security > Developer Mode** and toggle it on.
+   - In **Settings > General > VPN & Device Management**, trust your developer certificate.
+
 
 ### How the Update Button Works
 * Located in the top-right corner of the route planner and inside the **Profile** screen.
