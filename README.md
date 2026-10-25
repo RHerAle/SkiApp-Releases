@@ -53,6 +53,20 @@ SkiApp 3.0.0 introduce el nuevo sistema de diseño **Alpine Technical Precision*
 | Volumen de lógica de aplicación (LoC) | 4108 líneas | 2530 líneas | Reducción del 38.4% |
 | Tamaño de APK instalado | 9.99 MB | 9.99 MB | 100% autónomo offline |
 
+### Optimización de Binarios con R8 (v3.1.0 frente a v3.2.0)
+| Métrica Dalvik / APK | SkiApp v3.1.0 | SkiApp v3.2.0 (R8) | Reducción / Mejora |
+| :--- | :---: | :---: | :---: |
+| Tamaño de APK descargable | 10.11 MB (10.605.454 B) | 5.04 MB (5.287.561 B) | -50.14% (5.07 MB menos) |
+| Archivos DEX | 10 (MultiDex) | 1 (Single DEX) | -90.0% (-9 archivos) |
+| Clases definidas (class_defs) | 9.317 | 2.668 | -71.36% (-6.649 clases) |
+| Métodos referenciados (method_ids) | 78.895 | 20.536 | -73.97% (-58.359 métodos) |
+| Campos referenciados (field_ids) | 45.008 | 9.448 | -79.01% (-35.560 campos) |
+| Strings Dalvik (string_ids) | 103.870 | 22.526 | -78.31% (-81.344 cadenas) |
+| Huella DEX en RAM (mmap) | 12.97 MB | 2.66 MB | -79.47% (10.30 MB menos) |
+| Tiempo extracción / parseo DEX | 79.51 ms | 17.65 ms | 4.50x (77.8% más rápido) |
+| Recursos comprimidos (res/) | 750.702 B | 515.463 B | -31.34% (-235.239 B) |
+| Tabla recursos (resources.arsc) | 1.213.280 B | 1.184.876 B | -2.34% (-28.404 B) |
+
 ---
 
 ## Galería Visual de Capturas de Pantalla (v3.0.0)
@@ -224,20 +238,20 @@ SkiApp 3.0.0 introduce el nuevo sistema de diseño **Alpine Technical Precision*
 ## Guía de Instalación y Actualización OTA
 
 ### Instalación Inicial en Android
-1. **Descarga el APK:** Abre la [página de Latest Release](https://github.com/RHerAle/SkiApp-Releases/releases/latest) y pulsa en `SkiApp-v3.1.0.apk`.
+1. **Descarga el APK:** Abre la [página de Latest Release](https://github.com/RHerAle/SkiApp-Releases/releases/latest) y pulsa en `SkiApp-v3.2.0.apk`.
 2. **Autoriza la instalación:** Si Android solicita permiso para instalar aplicaciones desconocidas, actívalo en los ajustes de seguridad.
 3. **Instala y Abre:** Completa la instalación y accede a todas las funciones sin conexión a internet.
 
-### Descarga e Instalación en iPhone / iOS (`SkiApp-iOS-v3.1.0.ipa`)
-El paquete nativo para iOS (`SkiApp-iOS-v3.1.0.ipa`) ofrece compatibilidad con iOS 16.0 o superior en iPhone. Puedes instalar el paquete mediante herramientas estándar de sideloading:
+### Descarga e Instalación en iPhone / iOS (`SkiApp-iOS-v3.2.0.ipa`)
+El paquete nativo para iOS (`SkiApp-iOS-v3.2.0.ipa`) ofrece compatibilidad con iOS 16.0 o superior en iPhone. Puedes instalar el paquete mediante herramientas estándar de sideloading:
 
 1. **AltStore / SideStore:**
-   - Descarga `SkiApp-iOS-v3.1.0.ipa` desde [GitHub Releases](https://github.com/RHerAle/SkiApp-Releases/releases/tag/v3.1.0).
+   - Descarga `SkiApp-iOS-v3.2.0.ipa` desde [GitHub Releases](https://github.com/RHerAle/SkiApp-Releases/releases/tag/v3.2.0).
    - En AltStore o SideStore, pulsa el botón `+` en la pestaña **My Apps** y selecciona el archivo `.ipa`.
    - O bien, desde SkiApp en la pestaña **Perfil**, pulsa **Instalar con AltStore** o **SideStore** para iniciar la instalación de forma directa.
 2. **Sideloadly:**
    - Conecta tu iPhone al ordenador por cable o red local Wi-Fi.
-   - Abre Sideloadly, arrastra `SkiApp-iOS-v3.1.0.ipa`, introduce tu Apple ID y pulsa **Start**.
+   - Abre Sideloadly, arrastra `SkiApp-iOS-v3.2.0.ipa`, introduce tu Apple ID y pulsa **Start**.
 3. **TrollStore:**
    - Si tu dispositivo dispone de TrollStore, abre el enlace directo del `.ipa` y pulsa **Install** para una instalación permanente sin caducidad de firma de 7 días.
 4. **Activación de Modo Desarrollador en iOS 16+:**
@@ -292,6 +306,20 @@ SkiApp 3.0.0 introduces the **Alpine Technical Precision** design system and alg
 | Live Status Updates (10,000 iterations) | 19.98 us | 9.03 us | 2.21x (54.8% faster) |
 | Application logic size (LoC) | 4108 lines | 2530 lines | 38.4% code reduction |
 | Final APK footprint | 9.99 MB | 9.99 MB | 100% offline assets |
+
+### Binary Optimization with R8 (v3.1.0 vs v3.2.0)
+| Dalvik / APK Metric | SkiApp v3.1.0 | SkiApp v3.2.0 (R8) | Reduction / Speedup |
+| :--- | :---: | :---: | :---: |
+| Download APK Size | 10.11 MB (10,605,454 B) | 5.04 MB (5,287,561 B) | -50.14% (5.07 MB saved) |
+| DEX File Count | 10 (MultiDex) | 1 (Single DEX) | -90.0% (-9 files) |
+| Defined Classes (class_defs) | 9,317 | 2,668 | -71.36% (-6,649 classes) |
+| Referenced Methods (method_ids) | 78,895 | 20,536 | -73.97% (-58,359 methods) |
+| Referenced Fields (field_ids) | 45,008 | 9,448 | -79.01% (-35,560 fields) |
+| Dalvik Strings (string_ids) | 103,870 | 22,526 | -78.31% (-81,344 strings) |
+| DEX RAM Footprint (mmap) | 12.97 MB | 2.66 MB | -79.47% (10.30 MB saved) |
+| DEX Decompression / Parse Time | 79.51 ms | 17.65 ms | 4.50x (77.8% faster) |
+| Compressed UI Resources (res/) | 750,702 B | 515,463 B | -31.34% (-235,239 B) |
+| Resource Table (resources.arsc) | 1,213,280 B | 1,184,876 B | -2.34% (-28,404 B) |
 
 ---
 
@@ -354,20 +382,20 @@ SkiApp 3.0.0 introduces the **Alpine Technical Precision** design system and alg
 ## Installation & In-App Update Guide
 
 ### Initial Android Installation
-1. **Download APK:** Open the [Latest Release Page](https://github.com/RHerAle/SkiApp-Releases/releases/latest) and tap `SkiApp-v3.1.0.apk`.
+1. **Download APK:** Open the [Latest Release Page](https://github.com/RHerAle/SkiApp-Releases/releases/latest) and tap `SkiApp-v3.2.0.apk`.
 2. **Authorize Unknown Sources:** If prompted by Android, grant permission to install from your browser or file manager.
 3. **Launch & Ski:** Open SkiApp and select your favorite resort.
 
-### iPhone / iOS Installation Guide (`SkiApp-iOS-v3.1.0.ipa`)
-The native iOS package (`SkiApp-iOS-v3.1.0.ipa`) targets iOS 16.0 or later on iPhone. Install it via standard sideloading tools:
+### iPhone / iOS Installation Guide (`SkiApp-iOS-v3.2.0.ipa`)
+The native iOS package (`SkiApp-iOS-v3.2.0.ipa`) targets iOS 16.0 or later on iPhone. Install it via standard sideloading tools:
 
 1. **AltStore / SideStore:**
-   - Download `SkiApp-iOS-v3.1.0.ipa` from [GitHub Releases](https://github.com/RHerAle/SkiApp-Releases/releases/tag/v3.1.0).
+   - Download `SkiApp-iOS-v3.2.0.ipa` from [GitHub Releases](https://github.com/RHerAle/SkiApp-Releases/releases/tag/v3.2.0).
    - In AltStore or SideStore, tap `+` in **My Apps** and select the `.ipa` file.
    - Or open the **Profile** tab in SkiApp and tap **AltStore** or **SideStore** for one-tap install.
 2. **Sideloadly:**
    - Connect your iPhone to your PC or Mac via cable or local Wi-Fi.
-   - Open Sideloadly, drag and drop `SkiApp-iOS-v3.1.0.ipa`, enter your Apple ID, and click **Start**.
+   - Open Sideloadly, drag and drop `SkiApp-iOS-v3.2.0.ipa`, enter your Apple ID, and click **Start**.
 3. **TrollStore:**
    - On TrollStore-compatible devices, open the direct `.ipa` link and tap **Install** with zero 7-day resigning limits.
 4. **Developer Mode on iOS 16+:**
