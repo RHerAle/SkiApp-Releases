@@ -1,8 +1,8 @@
 # SkiApp: Navegador de pistas y grabador GPS para esquiadores
 
-[![Última versión](https://img.shields.io/badge/Versi%C3%B3n-v4.0.0-0B5F63)](https://github.com/RHerAle/SkiApp-Releases/releases/tag/v4.0.0)
-[![Android](https://img.shields.io/badge/Android-8.0%2B%20(Oreo%20a%2016)-34D399?logo=android&logoColor=white)](https://github.com/RHerAle/SkiApp-Releases/releases/download/v4.0.0/SkiApp-v4.0.0.apk)
-[![iOS](https://img.shields.io/badge/iOS-16.0%2B-000000?logo=apple&logoColor=white)](https://github.com/RHerAle/SkiApp-Releases/releases/download/v4.0.0/SkiApp-iOS-v4.0.0.ipa)
+[![Última versión](https://img.shields.io/badge/Versi%C3%B3n-v4.1.0-0B5F63)](https://github.com/RHerAle/SkiApp-Releases/releases/tag/v4.1.0)
+[![Android](https://img.shields.io/badge/Android-8.0%2B%20(Oreo%20a%2016)-34D399?logo=android&logoColor=white)](https://github.com/RHerAle/SkiApp-Releases/releases/download/v4.1.0/SkiApp-v4.1.0.apk)
+[![iOS](https://img.shields.io/badge/iOS-16.0%2B-000000?logo=apple&logoColor=white)](https://github.com/RHerAle/SkiApp-Releases/releases/download/v4.1.0/SkiApp-iOS-v4.1.0.ipa)
 [![Estaciones](https://img.shields.io/badge/Estaciones-82%20Integradas-0284C7)](https://github.com/RHerAle/SkiApp-Releases#cat%C3%A1logo-completo-de-82-estaciones-de-esqu%C3%AD)
 [![Sin conexión](https://img.shields.io/badge/Sin%20conexi%C3%B3n-100%25%20A*-F59E0B)](https://github.com/RHerAle/SkiNav)
 [![Licencia de datos](https://img.shields.io/badge/Datos-ODbL--1.0-64748B)](https://opendatacommons.org/licenses/odbl/)
@@ -23,16 +23,32 @@ SkiApp resuelve estas situaciones en tu teléfono móvil sin requerir conexión 
 
 ---
 
-## Novedades de la versión 4.0.0
+## Novedades de la versión 4.1.0
 
-SkiApp 4.0.0 representa una evolución integral de la plataforma, estrenando el sistema de diseño glaciar, tipografía de alta legibilidad, modo de alto contraste para sol y nieve, soporte para actividades en directo en Android e iOS, y exportación de rutas en formato GPX.
+SkiApp 4.1.0 amplía las capacidades de la plataforma con la incorporación de la nueva pestaña de estaciones con pronóstico meteorológico integrado, detección automática de estación mediante geolocalización, control de pausa y reanudación de sesiones, autorecuperación frente a cierres del sistema y supresión de deriva GPS en reposo.
 
 ### Enlaces de descarga oficial
 
-* **Paquete Android:** [SkiApp-v4.0.0.apk](https://github.com/RHerAle/SkiApp-Releases/releases/download/v4.0.0/SkiApp-v4.0.0.apk) (5,64 MB, SHA-256: `a2dcb64778cd60908e0d419a4a50e1e2a9159fdaeb5cd14764168630c91ac0bc`)
-* **Paquete iOS:** [SkiApp-iOS-v4.0.0.ipa](https://github.com/RHerAle/SkiApp-Releases/releases/download/v4.0.0/SkiApp-iOS-v4.0.0.ipa) (3,07 MB, SHA-256: `8f76c2f2c18b24350cbfc995673025efed02702364cd2a833ff8ba983446feab`)
+* **Paquete Android:** [SkiApp-v4.1.0.apk](https://github.com/RHerAle/SkiApp-Releases/releases/download/v4.1.0/SkiApp-v4.1.0.apk) (5,47 MB, SHA-256: `e6adba61f9fb27357e4e7c4b65db4af7e2713c75e02f2ae638b6fed84e398e04`)
+* **Paquete iOS:** [SkiApp-iOS-v4.1.0.ipa](https://github.com/RHerAle/SkiApp-Releases/releases/download/v4.1.0/SkiApp-iOS-v4.1.0.ipa) (3,06 MB, SHA-256: `f65e40b89d5a932d7f58cf4efe49b6992a8674643bc89ae92f009c7cb8a7a830`)
 
-### Pilares del sistema de diseño glaciar
+### Nuevas características de la versión 4.1.0
+
+* **Pestaña Estaciones (5.ª pestaña en la barra inferior):** Catálogo interactivo de las 82 estaciones con pronóstico meteorológico en tiempo real (temperatura, velocidad del viento, rachas y espesor de nieve) obtenido de Open-Meteo, enlace de licencia conforme a sus términos y resumen de remontes abiertos previstos según condiciones meteorológicas y horarios habituales, sin requerir la carga en memoria del grafo completo. Permite ordenar por proximidad al esquiador o alfabéticamente.
+* **Detección automática de estación:** Detección de la estación en la que se encuentra el usuario mediante polígonos delimitadores y proximidad a remontes o pistas, cargando automáticamente el dominio esquiable sin necesidad de seleccionarlo a mano.
+* **Pausa y reanudación de sesión:** Dos botones táctiles ergonómicos de 72 dp en la pantalla de grabación (Pausar/Reanudar en glaciar y Terminar con contorno suave). La pausa divide la sesión en tramos independientes en la traza y en los ficheros GPX exportados, evitando enlazar paradas con rectas ficticias.
+* **Supresión de ruido y deriva GPS en parado (`Acumulador`):** Filtrado que descarta fluctuaciones de señal en reposo para no falsear la distancia ni el desnivel descendido mientras se permanece detenido en pistas o colas.
+* **Persistencia y autorecuperación ante cierres del sistema:** Registro periódico en disco que permite restaurar de forma inmediata una sesión en curso en caso de que Android o iOS cierren la app por falta de memoria.
+* **Guía técnica de batería y permisos de segundo plano:** Pantalla explicativa con indicaciones específicas para configurar el ahorro de energía en distintos fabricantes y garantizar una grabación continua.
+* **Actualización del entorno de compilación:** Migración a Kotlin 2.3.21, Android Gradle Plugin 8.13.2, Gradle 8.14.6, Room 2.8.5 y compilación nativa contra API 36 (Android 16), manteniendo compatibilidad desde Android 8.0 (API 26).
+
+---
+
+### Versión 4.0.0 (Rediseño técnico alpino)
+
+SkiApp 4.0.0 estrenó el sistema de diseño glaciar, tipografía de alta legibilidad, modo de alto contraste para sol y nieve, soporte para actividades en directo en Android e iOS, y exportación de rutas en formato GPX.
+
+#### Pilares del sistema de diseño glaciar
 
 * **Color de marca glaciar (`#0B5F63`):** Tono cromático primario que evoca el hielo alpino. Sobre fondo glaciar, el texto blanco `#FFFFFF` alcanza un ratio de contraste de 7,42:1. En tema oscuro adopta el valor `#7FD0D4`. Este color se distingue con nitidez de las pistas verdes, azules, rojas y negras en todas las variantes de daltonismo.
 * **Superficies técnicas y jerarquía visual:** Fondos en superficie `#F4F7FA` (modo claro) y `#0F1720` (modo oscuro), tarjetas de lectura en `#FFFFFF` / `#0A1118`, textos principales en tinta `#15212E` / `#EEF2F6`, y contornos de control en `#6B7788` con separación nítida sin sombras artificiales.
