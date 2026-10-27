@@ -1,8 +1,8 @@
 # SkiApp: Navegador de pistas y grabador GPS para esquiadores
 
-[![Última versión](https://img.shields.io/badge/Versi%C3%B3n-v4.1.0-0B5F63)](https://github.com/RHerAle/SkiApp-Releases/releases/tag/v4.1.0)
-[![Android](https://img.shields.io/badge/Android-8.0%2B%20(Oreo%20a%2016)-34D399?logo=android&logoColor=white)](https://github.com/RHerAle/SkiApp-Releases/releases/download/v4.1.0/SkiApp-v4.1.0.apk)
-[![iOS](https://img.shields.io/badge/iOS-16.0%2B-000000?logo=apple&logoColor=white)](https://github.com/RHerAle/SkiApp-Releases/releases/download/v4.1.0/SkiApp-iOS-v4.1.0.ipa)
+[![Última versión](https://img.shields.io/badge/Versi%C3%B3n-v4.1.1-0B5F63)](https://github.com/RHerAle/SkiApp-Releases/releases/tag/v4.1.1)
+[![Android](https://img.shields.io/badge/Android-8.0%2B%20(Oreo%20a%2016)-34D399?logo=android&logoColor=white)](https://github.com/RHerAle/SkiApp-Releases/releases/download/v4.1.1/SkiApp-v4.1.1.apk)
+[![iOS](https://img.shields.io/badge/iOS-16.0%2B-000000?logo=apple&logoColor=white)](https://github.com/RHerAle/SkiApp-Releases/releases/download/v4.1.1/SkiApp-iOS-v4.1.1.ipa)
 [![Estaciones](https://img.shields.io/badge/Estaciones-82%20Integradas-0284C7)](https://github.com/RHerAle/SkiApp-Releases#cat%C3%A1logo-completo-de-82-estaciones-de-esqu%C3%AD)
 [![Sin conexión](https://img.shields.io/badge/Sin%20conexi%C3%B3n-100%25%20A*-F59E0B)](https://github.com/RHerAle/SkiNav)
 [![Licencia de datos](https://img.shields.io/badge/Datos-ODbL--1.0-64748B)](https://opendatacommons.org/licenses/odbl/)
@@ -20,6 +20,25 @@ En estaciones de esquí de gran extensión como Baqueira Beret, Les 3 Vallées, 
 4. **Horarios de Ski Bus:** Conectar sectores distantes mediante lanzaderas por carretera exige conocer la hora exacta de salida sin esperas bajo el frío.
 
 SkiApp resuelve estas situaciones en tu teléfono móvil sin requerir conexión de datos.
+
+---
+
+## Novedades de la versión 4.1.1
+
+SkiApp 4.1.1 consolida el rendimiento y la robustez de los motores de navegación topológica y telemetría alpina, integrando optimizaciones de búsqueda en grafos, clasificación telemétrica sin reservas en memoria y saneamiento defensivo tolerante a fallos.
+
+### Enlaces de descarga oficial
+
+* **Paquete Android:** [SkiApp-v4.1.1.apk](https://github.com/RHerAle/SkiApp-Releases/releases/download/v4.1.1/SkiApp-v4.1.1.apk) (5,47 MB, SHA-256: `6cb0f175d24bb5a6439df40fb4cf4b04627401e9aa4871645dd1f285432a79ec`)
+* **Paquete iOS:** [SkiApp-iOS-v4.1.1.ipa](https://github.com/RHerAle/SkiApp-Releases/releases/download/v4.1.1/SkiApp-iOS-v4.1.1.ipa) (3,21 MB, SHA-256: `ab229a90f7ce98b4d6518514a76bdc252b521a3b0eff17b48573ed498f29f675`)
+
+### Nuevas características y mejoras de la versión 4.1.1
+
+* **Optimización algorítmica de búsqueda A\* (SkiNav):** Reducción de latencia y sobrecarga de CPU en el cálculo de rutas mediante precalculo trigonométrico invariant (`endLatRad`, `endLngRad`, `cosEndLat`) antes de la expansión de vecinos, ordenación natural en `PriorityQueue` sin lambdas intermedias y supresión de reservas de objetos `Pair` para aristas no asociadas a servicios de autobús.
+* **Validación estricta de coordenadas y horarios (SkiNav):** Protección frente a desbordamientos numéricos en el procesado de horas y minutos, junto con descarte rápido (*fast-fail*) ante peticiones de ruta con identificadores de nodo inexistentes.
+* **Clasificación telemétrica sin reservas en memoria (SkiTracker):** Supresión de la asignación continua de objetos `Iterator` y rangos flotantes en el clasificador de actividad (`ActivityRecognizer`), empleando iteración indexada directa y comparaciones escalares primitivas sobre la ventana deslizante de posiciones GNSS.
+* **Cálculo de gasto metabólico optimizado y saneado (SkiTracker):** Supresión de divisiones repetidas en el modelo MET mediante el factor precalculado `0,0175f` y saneamiento defensivo de valores nulos o espurios sin lanzar excepciones en tiempo de ejecución, asegurando la estabilidad del servicio de grabación en segundo plano.
+* **Flujo automatizado de ingestión y paridad de motores:** Integración continua mediante script y flujo en GitHub Actions para sincronizar de forma desatendida las actualizaciones de los repositorios de código abierto de los motores manteniendo paridad estricta byte a byte (`cmp -s`).
 
 ---
 
@@ -243,16 +262,16 @@ SkiApp 4.0.0 estrenó el sistema de diseño glaciar, tipografía de alta legibil
 
 ### Instalación en Android
 
-1. **Descarga el archivo APK:** Abre el enlace de la [versión v4.0.0](https://github.com/RHerAle/SkiApp-Releases/releases/download/v4.0.0/SkiApp-v4.0.0.apk).
+1. **Descarga el archivo APK:** Abre el enlace de la [versión v4.1.1](https://github.com/RHerAle/SkiApp-Releases/releases/download/v4.1.1/SkiApp-v4.1.1.apk).
 2. **Autoriza orígenes externos:** Si Android solicita confirmación de seguridad para paquetes descargados fuera de la tienda oficial, concede permiso al navegador o administrador de archivos.
 3. **Completa la instalación:** Pulsa sobre el archivo para iniciar la aplicación y comenzar la navegación.
 
-### Instalación en iPhone / iOS (`SkiApp-iOS-v4.0.0.ipa`)
+### Instalación en iPhone / iOS (`SkiApp-iOS-v4.1.1.ipa`)
 
 El paquete para iOS es compatible con iOS 16.0 o versiones posteriores en iPhone. Puedes cargar el archivo `.ipa` mediante soluciones reconocidas:
 
 1. **AltStore o SideStore:**
-   - Descarga el archivo `SkiApp-iOS-v4.0.0.ipa` desde [GitHub Releases](https://github.com/RHerAle/SkiApp-Releases/releases/download/v4.0.0/SkiApp-iOS-v4.0.0.ipa).
+   - Descarga el archivo `SkiApp-iOS-v4.1.1.ipa` desde [GitHub Releases](https://github.com/RHerAle/SkiApp-Releases/releases/download/v4.1.1/SkiApp-iOS-v4.1.1.ipa).
    - En la aplicación AltStore o SideStore, pulsa el botón `+` en la pestaña de aplicaciones y selecciona el fichero `.ipa`.
 2. **TrollStore:**
    - En terminales compatibles con TrollStore, descarga el archivo e instálalo para un uso continuado sin caducidad de firma de 7 días.
